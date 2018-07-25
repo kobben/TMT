@@ -1,11 +1,10 @@
 ##Thematic Map Tutor.
 
-NatAtlas Viewer is a HTML5/SVG webapplication using the D3 Javascript API and Vega-Lite. It offers a wbe-app to learn how to create correct thematic maps using the Cartographic Grammar as taught in various courses in ITC.
+NatAtlas Viewer is an HTML5 webapplication using  Vega-Lite. It offers a web-app to learn how to create correct thematic maps using the Cartographic Grammar as taught in various courses in ITC.
 Check out stable test versions on <http://kartoweb.itc.nl/TMT/>
 (not always the latest version, that one is always in this GitHub)...
 
-Thematic Map Tutor is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.
-see http://creativecommons.org/licenses/by-nc-sa/3.0/
+Thematic Map Tutor is licensed under GNU General Public License v3.0 (see https://choosealicense.com/licenses/gpl-3.0/)
 
 Author: Barend Köbben - <a href="mailto:b.j.kobben@utwente.nl">b.j.kobben@utwente.nl</a> 
 
