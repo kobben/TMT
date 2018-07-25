@@ -1,0 +1,126 @@
+{
+  "$schema": "TMT.json",
+  "grammarsettings": {
+    "measurementlevel": "tbd",
+    "perception": "tbd",
+    "visvars": "tbd",
+    "datageom": "tbd",
+    "maptype": "tbd"
+  },
+  "datasettings": {
+    "datafile": "./data/overijssel_centroids.geo.json",
+    "datafield": "tbd",
+    "datalegend": "tbd"
+  },
+  "gui": {
+    "state": ["xxX","x","X"],
+    "stepArrows": {
+      "step_arrow_1": {
+        "svgID": "step_arrow_1",
+        "selected": false
+      },
+      "step_arrow_2": {
+        "svgID": "step_arrow_2",
+        "selected": false
+      }
+    },
+    "dataBoxes": {
+      "qualitative": {
+        "svgID": "qualitative",
+        "selected": false,
+        "selectable": true
+      },
+      "quantitative": {
+        "svgID": "quantitative",
+        "selected": false,
+        "selectable": true
+      },
+      "qualitative_nominal": {
+        "svgID": "qualitative_nominal",
+        "selected": false,
+        "selectable": false
+      },
+      "qualitative_ordinal": {
+        "svgID": "qualitative_ordinal",
+        "selected": false,
+        "selectable": false
+      },
+      "quantitative_interval": {
+        "svgID": "quantitative_interval",
+        "selected": false,
+        "selectable": false
+      },
+      "quantitative_ratio": {
+        "svgID": "quantitative_ratio",
+        "selected": false,
+        "selectable": false
+      },
+      "quantitative_ratio_relative": {
+        "svgID": "quantitative_ratio_relative",
+        "selected": false,
+        "selectable": false
+      },
+      "quantitative_ratio_absolute": {
+        "svgID": "quantitative_ratio_absolute",
+        "selected": false,
+        "selectable": false
+      }
+    },
+    "perceptionBoxes": {
+      "perception_associative": {
+        "svgID": "perception_associative",
+        "selected": false
+      },
+      "perception_ordered": {
+        "svgID": "perception_ordered",
+        "selected": false
+      },
+      "perception_quantitative": {
+        "svgID": "perception_quantitative",
+        "selected": false
+      }
+    },
+    "visvarBoxes": {
+      "associative_colour": {
+        "svgID": "associative_colour",
+        "selected": false,
+        "selectable": false
+      },
+      "associative_form": {
+        "svgID": "associative_form",
+        "selected": false,
+        "selectable": false
+      },
+      "associative_texture": {
+        "svgID": "associative_texture",
+        "selected": false,
+        "selectable": false
+      },
+      "associative_orientation": {
+        "svgID": "associative_orientation",
+        "selected": false,
+        "selectable": false
+      },
+      "ordered_value": {
+        "svgID": "ordered_value",
+        "selected": false,
+        "selectable": false
+      },
+      "ordered_size": {
+        "svgID": "ordered_size",
+        "selected": false,
+        "selectable": false
+      },
+      "ordered_texture": {
+        "svgID": "ordered_texture",
+        "selected": false,
+        "selectable": false
+      },
+      "quantitative_size": {
+        "svgID": "quantitative_size",
+        "selected": false,
+        "selectable": false
+      }
+    }
+  }
+}
