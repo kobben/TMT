@@ -10,8 +10,7 @@ Author: Barend Köbben - <a href="mailto:b.j.kobben@utwente.nl">b.j.kobben@utwen
 
 #### Changelist:
 
-**version 0.0.1 [24 July 2018]:**
+##### version 0.0.1 [24 July 2018]
 *   initial test version
-
-**version 0.0.2 [25 July 2018]:**
+##### version 0.0.2 [25 July 2018]
 *  changed to using `gui.state` codestrings
