@@ -1,16 +1,9 @@
 {
   "$schema": "TMT.json",
-  "grammarsettings": {
-    "measurementlevel": "tbd",
-    "perception": "tbd",
-    "visvars": "tbd",
-    "datageom": "tbd",
-    "maptype": "tbd"
-  },
   "datasettings": {
-    "datafile": "./data/overijssel_centroids.geo.json",
-    "datafield": "tbd",
-    "datalegend": "tbd"
+    "datafile": "./data/overijssel.geo.json",
+    "datafield": "undefined",
+    "datatitle": "undefined"
   },
   "gui": {
     "state": ["xxX","x","X"],
