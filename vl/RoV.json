@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.1.3.json",
+  "width": 700,
+  "height": 580,
+  "padding": 0,
+  "config": {
+    "view": {
+      "stroke": "none"
+    }
+  },
+  "data": {
+    "url": "https://kartoweb.itc.nl/kobben/Vega-Lite/data/overijssel_centroids.geo.json",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "projection": {
+    "type": "stereographic"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "geoshape",
+        "stroke": "black",
+        "strokeWidth": 0.2
+      },
+      "encoding": {
+        "color": {
+          "field": "properties.bev_dichth",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "greens",
+            "domain": [0,750,1500]
+          },
+          "legend": {
+            "orient": "top-right",
+            "title": "population per km2:"
+          }
+        }
+      }
+    }
+  ]
+}
