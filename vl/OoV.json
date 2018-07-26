@@ -28,7 +28,7 @@
       "encoding": {
         "color": {
           "field": "TEMPLATE",
-          "type": "quantitative",
+          "type": "ordinal",
           "scale": {
             "scheme": "greens"
           },
