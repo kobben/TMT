@@ -17,11 +17,16 @@
 <h1>Thematic Map Tutor</h1>
 <div id="guiDiv">
   <div id="dataDiv">
-    Data to map: <select id="attrChooser" name="mapAttrib" onchange="setMapAttr(this.value)" >
-    <option value="undefined">choose from list...</option>
-  </select>
-    <br/>
-    Title of map: <input type="text" id="titleChooser" name="mapTitle" size="4" onchange="setMapTitle(this.value)"  />
+		<table>
+			<tr><td>Spatial data:</td><td><select id="dataChooser" name="mapData" onchange="selectMapData(this.value)" >
+				<option value="undefined">Municipalities in Overijssel (areas)</option>
+			</select></td></tr>
+			<tr><td>Attribute data:</td><td><select id="attrChooser" name="mapAttrib" onchange="selectMapAttr(this.value)" >
+				<option value="undefined">choose from list...</option>
+			</select></td></tr>
+			<tr><td>Map title:</td><td><input type="text" id="titleChooser" name="mapTitle" size="4" onchange="selectMapTitle(this.value)" />
+			</td></tr>
+		</table>
   </div>
   <svg id="grammarDiv" x="0px"
 	 y="0px" viewBox="0 0 338.4 223.2" xml:space="preserve">
@@ -79,6 +84,12 @@
 		<text transform="matrix(1 0 0 1 13.3718 175.3396)" fill="#231F20" font-family="'TrebuchetMS'" font-size="6px">variables</text>
 	</g>
 
+	<g id="step_arrow_0">
+		<g transform="translate(0,-90)">
+			<line  fill="none" stroke="#DBDCDD" stroke-width="14.173"  stroke-linejoin="round" x1="22.7" y1="32.6" x2="22.7" y2="85.7"></line>
+			<polygon fill="#DBDCDD" points="9.5,83 22.7,85.7 35.8,83 22.7,98.5 			"/>
+		</g>
+	</g>
 	<g id="step_arrow_1">
 			<line  fill="none" stroke="#DBDCDD" stroke-width="14.173"  stroke-linejoin="round" x1="22.7" y1="32.6" x2="22.7" y2="85.7"></line>
 			<polygon fill="#DBDCDD" points="9.5,83 22.7,85.7 35.8,83 22.7,98.5 			"/>

@@ -6,8 +6,13 @@
     "datatitle": "undefined"
   },
   "gui": {
+    "mapMade": false,
     "state": ["xxX","x","X"],
     "stepArrows": {
+      "step_arrow_0": {
+        "svgID": "step_arrow_0",
+        "selected": false
+      },
       "step_arrow_1": {
         "svgID": "step_arrow_1",
         "selected": false

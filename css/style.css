@@ -1,15 +1,14 @@
 @font-face {
   font-family: 'TrebuchetMS';
-  src: url("TrebuchetMS.eot");
-  src: url("TrebuchetMS.eot?#iefix") format("embedded-opentype"), url("TrebuchetMS.woff") format("woff"), url("TrebuchetMS.ttf") format("truetype"), url("TrebuchetMS.svg#TrebuchetMS") format("svg");
+  src: url("TrebuchetMS.woff") format("woff");
+  /*src: url("TrebuchetMS.eot"), url("TrebuchetMS.eot?#iefix") format("embedded-opentype"), url("TrebuchetMS.woff") format("woff"), url("TrebuchetMS.ttf") format("truetype"), url("TrebuchetMS.svg#TrebuchetMS") format("svg");*/
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'TrebuchetMS-Bold';
-  src: url("TrebuchetMS-Bold.eot");
-  src: url("TrebuchetMS-Bold.eot?#iefix") format("embedded-opentype"), url("TrebuchetMS-Bold.woff") format("woff"), url("TrebuchetMS-Bold.ttf") format("truetype"), url("TrebuchetMS-Bold.svg#TrebuchetMS-Bold") format("svg");
+  src: url("TrebuchetMS-Bold.woff") format("woff");
+  /*src: url("TrebuchetMS-Bold.eot?#iefix") format("embedded-opentype"),src: url("TrebuchetMS-Bold.eot"), url("TrebuchetMS-Bold.ttf") format("truetype"), url("TrebuchetMS-Bold.svg#TrebuchetMS-Bold") format("svg");*/
   font-weight: normal;
   font-style: normal;
 }
@@ -18,7 +17,7 @@ body {
   background-color: #eee;
   font-family: 'TrebuchetMS', Verdana, sans-serif;
   color: black;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 b {
@@ -67,9 +66,8 @@ h3 {
   position: absolute;
   left: 0px;
   top: 0px;
-  overflow: auto;
-  /*background-color: chartreuse;*/
-  height: 80px;
+  overflow: hidden;
+  height: 120px;
   width: 500px;
   margin: 5px 0px;
   z-index: 99;
@@ -79,8 +77,8 @@ h3 {
   display: inline;
   position: absolute;
   left: 0px;
-  top: 0px;
-  overflow: auto;
+  top: 30px;
+  overflow: hidden;
   height: 500px;
   width: 500px;
   margin: 0 0;
@@ -89,7 +87,7 @@ h3 {
 #mapDiv {
   display: inline;
   position: absolute;
-  overflow: auto;
+  overflow: hidden;
   top: 0px;
   left: 500px;
   height: 600px;
@@ -97,32 +95,33 @@ h3 {
   margin: 0 0;
 }
 
-/*dropdown menu*/
+/*dropdown and text boxes */
 select, input {
   margin: 3px;
   padding: 0px 5px 0px 5px;
   font-size: 1em;
   color: white;
-  height: 30px;
-  width: 385px;
+  height: 25px;
+  width: 380px;
   display: inline;
   font-family: 'TrebuchetMS', Verdana, sans-serif;
   color: white;
-  font-size: 1em;
-  background: #91908F;
+  font-size: 0.9em;
+  background: #c1c1c1;
   border-radius: 5px;
   border-color: black;
+  border-width: 0.5px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   box-shadow: none !important;
-  -moz-autofill: color: #91908F !important;
-  -webkit-autofill: color: #91908F !important;
+  -moz-autofill: color: #c1c1c1 !important;
+  -webkit-autofill: color: #c1c1c1 !important;
 }
 
 input {
-  width: 373px;
-  height: 28px;
+  width: 368px;
+  height: 23px;
 }
 
 
