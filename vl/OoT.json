@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.1.3.json",
+  "width": 700,
+  "height": 580,
+  "padding": 0,
+  "config": {
+    "view": {
+      "stroke": "none"
+    }
+  },
+  "data": {
+    "url": "TEMPLATE",
+    "format": {
+      "type": "json",
+      "property": "TEMPLATE"
+    }
+  },
+  "projection": {
+    "type": "stereographic"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "geoshape",
+        "stroke": "black",
+        "strokeWidth": 0.2
+      },
+      "encoding": {
+        "color": {
+          "field": "TEMPLATE",
+          "type": "ordinal",
+          "scale": {
+            "range": [
+              "url(#dots-1)",
+              "url(#dots-2)",
+              "url(#dots-3)",
+              "url(#dots-4)",
+              "url(#dots-5)",
+              "url(#dots-6)",
+              "url(#dots-7)",
+              "url(#dots-8)",
+              "url(#dots-9)"
+            ]
+          },
+          "legend": {
+            "orient": "top-right",
+            "title": "TEMPLATE"
+          }
+        }
+      }
+    }
+  ]
+}
+
+
+
+
+

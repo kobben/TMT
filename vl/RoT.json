@@ -6,13 +6,6 @@
   "config": {
     "view": {
       "stroke": "none"
-    },
-    "style": {
-      "area_background": {
-        "stroke": "black",
-        "strokeWidth": 0.2,
-        "fill": "#cff"
-      }
     }
   },
   "data": {
@@ -29,33 +22,25 @@
     {
       "mark": {
         "type": "geoshape",
-        "style": "area_background"
-      }
-    },
-    {
-      "mark": {
-        "type": "circle",
-        "fill": "red",
-        "stroke": "white",
-        "strokeWidth": 1,
-        "fill-opacity": 0.5
+        "stroke": "black",
+        "strokeWidth": 0.2
       },
       "encoding": {
-        "longitude": {
-          "field": "properties.centroid_lon",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "properties.centroid_lat",
-          "type": "quantitative"
-        },
-        "size": {
+        "color": {
           "field": "TEMPLATE",
           "type": "quantitative",
           "scale": {
-            "range": [0,5000]
+            "type": "quantize",
+            "range": [
+              "url(#dots-2)",
+              "url(#dots-4)",
+              "url(#dots-6)",
+              "url(#dots-8)",
+              "url(#dots-9)"
+            ]
           },
           "legend": {
+            "type": "symbol",
             "orient": "top-right",
             "title": "TEMPLATE"
           }
@@ -64,3 +49,8 @@
     }
   ]
 }
+
+
+
+
+
