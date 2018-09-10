@@ -10,10 +10,11 @@ Author: Barend Köbben - <a href="mailto:b.j.kobben@utwente.nl">b.j.kobben@utwen
 
 #### Changelist:
 
-##### version 0.3 [27 July 2018]
+##### version 0.3 [1 September 2018]
 * added data/attribute/title chooser to gui and logic 
 * implemented vega-lite json templating
 * made compatible for Chrome/FireFox/Safari/Edge
+* added SVG pattersn to us in textured fills
 ##### version 0.2 [25 July 2018]
 * changed to using `gui.state` codestrings
 * added `hasOwnProperty()` check in `for boxes in` iterations
