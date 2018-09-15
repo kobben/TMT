@@ -43,7 +43,7 @@
             ]
           },
           "legend": {
-            "orient": "top-right",
+            "orient": "right",
             "title": "TEMPLATE"
           }
         }

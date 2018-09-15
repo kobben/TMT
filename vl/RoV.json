@@ -8,15 +8,15 @@
       "stroke": "none"
     }
   },
+  "projection": {
+    "type": "stereographic"
+  },
   "data": {
     "url": "TEMPLATE",
     "format": {
       "type": "json",
       "property": "TEMPLATE"
     }
-  },
-  "projection": {
-    "type": "stereographic"
   },
   "layer": [
     {
@@ -33,7 +33,7 @@
             "scheme": "greens"
           },
           "legend": {
-            "orient": "top-right",
+            "orient": "right",
             "title": "TEMPLATE"
           }
         }

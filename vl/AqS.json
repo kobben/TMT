@@ -56,7 +56,7 @@
             "range": [0,5000]
           },
           "legend": {
-            "orient": "top-right",
+            "orient": "right",
             "title": "TEMPLATE"
           }
         }

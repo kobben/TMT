@@ -23,30 +23,30 @@
       "mark": {
         "type": "geoshape",
         "stroke": "black",
-        "strokeWidth": 0.2
-      },
+        "strokeWidth": 0.2,
+        "fill": "#eff"
+      }
+    },
+    {
+      "mark": "point",
       "encoding": {
-        "color": {
+        "longitude": {
+          "field": "properties.centroid_lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "properties.centroid_lat",
+          "type": "quantitative"
+        },
+        "size": {"value" : 500},
+        "fill": {"value" : "red"},
+        "shape": {
           "field": "TEMPLATE",
-          "type": "nominal",
-          "scale": {
-            "range": [
-              "url(#circles-1)",
-              "url(#diagonal-stripe-1)",
-              "url(#dots-1)",
-              "url(#horizontal-stripe-1)",
-              "url(#vertical-stripe-1)",
-              "url(#crosshatch)",
-              "url(#houndstooth)",
-              "url(#lightstripe)",
-              "url(#smalldot)",
-              "url(#whitecarbon)"
-            ]
-          },
-          "legend": {
-            "orient": "top-right",
-            "title": "TEMPLATE"
-          }
+          "type": "nominal"
+        },
+        "legend": {
+          "orient": "right",
+          "title": "TEMPLATE"
         }
       }
     }

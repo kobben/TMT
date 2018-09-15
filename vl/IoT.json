@@ -41,7 +41,7 @@
           },
           "legend": {
             "type": "symbol",
-            "orient": "top-right",
+            "orient": "right",
             "title": "TEMPLATE"
           }
         }

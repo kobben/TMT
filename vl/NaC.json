@@ -30,7 +30,7 @@
           "field": "TEMPLATE",
           "type": "nominal",
           "legend": {
-            "orient": "top-right",
+            "orient": "right",
             "title": "TEMPLATE"
           }
         }
