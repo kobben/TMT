@@ -3,35 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width"/>
-  <link rel="stylesheet" type="text/css" href="./css/style.css">
-	<!--<script src="https://cdn.jsdelivr.net/npm/vega@3"></script>-->
-	<!--<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>-->
-	<!--<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>-->
-	<script src="lib/vega.min.js"></script>
-	<script src="lib/vega-lite.min.js"></script>
-	<script src="lib/vega-embed.min.js"></script>
-  <script src="./lib/TMT.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/patterns.css">
+  <!--<script src="https://cdn.jsdelivr.net/npm/vega@3"></script>-->
+  <!--<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>-->
+  <!--<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>-->
+  <script src="lib/vega.min.js"></script>
+  <script src="lib/vega-lite.min.js"></script>
+  <script src="lib/vega-embed.min.js"></script>
+  <script src="lib/TMT.js"></script>
   <title>Thematic Map Tutor</title>
 </head>
 <body onload="init()">
+
+
+
 <h1>Thematic Map Tutor</h1>
 <div id="guiDiv">
-  <div id="dataDiv">
+	<div id="dataDiv">
 		<table>
-			<tr><td>Spatial data:</td><td><select id="dataChooser" name="mapData" onchange="selectMapData(this.value)" >
-				<option value="undefined">Municipalities in Overijssel (areas)</option>
-			</select></td></tr>
-			<tr><td>Attribute data:</td><td><select id="attrChooser" name="mapAttrib" onchange="selectMapAttr(this.value)" >
-				<option value="undefined">choose from list...</option>
-			</select></td></tr>
-			<tr><td>Map title:</td><td><input type="text" id="titleChooser" name="mapTitle" size="4" onchange="selectMapTitle(this.value)" />
-			</td></tr>
+			<tr>
+				<td>Spatial data:</td>
+				<td><select id="dataChooser" name="mapData" onchange="selectMapData(this.value)">
+					<option value="area">Municipalities in Overijssel (areas)</option>
+					<!--<option value="line">State Roads in Overijssel (lines)</option>-->
+				</select></td>
+			</tr>
+			<tr>
+				<td>Attribute data:</td>
+				<td><select id="attrChooser" name="mapAttrib" onchange="selectMapAttr(this.value)">
+					<option value="undefined">choose from list...</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Map title:</td>
+				<td><input type="text" id="titleChooser" name="mapTitle" size="4" onchange="selectMapTitle(this.value)"/>
+				</td>
+			</tr>
 		</table>
-  </div>
-  <svg id="grammarDiv" x="0px"
+	</div>
+
+
+	<svg id="grammarDiv" x="0px"
 	 y="0px" viewBox="0 0 338.4 223.2" xml:space="preserve">
 	<g id="back" display="none" >
-
 		<path fill="none" stroke="#BBBDBF" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 		M315.2,216.1c0,0.9-0.5,1.6-1.2,1.6H63.2c-0.7,0-3.2,0-3.2-0.9v-90.4c0-0.9,2.8-2.5,3.2-1.6H314c0.1-0.3,1.2,0.7,1.2,1.6V216.1z"></path>
 	<rect x="138.7" y="210.3" fill="none" width="174.3" height="8.9"></rect>
@@ -39,8 +54,7 @@
 		283.7,57.9 332.4,57.9 332.4,3.5 	"></polygon>
 	<polygon fill="#D0D2D3" points="60,3.5 177,3.5 177,40.5 126.4,40.5 126.4,25 117.1,25 117.1,40.5 60,40.5 	"></polygon>
 	<g>
-
-			<path fill="#E6EEC1" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		<path fill="#E6EEC1" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 			M332.4,200.9c0,1.6-1.1,2.8-2.4,2.8h-30.2c-1.3,0-2.4-1.3-2.4-2.8v-7.3c0-1.6,1.1-2.8,2.4-2.8h30.2c1.3,0,2.4,1.3,2.4,2.8V200.9z"></path>
 		<text transform="matrix(1 0 0 1 302.6948 200.6895)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">W</text>
 		<text transform="matrix(1 0 0 1 310.7563 200.6895)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">e</text>
@@ -48,20 +62,17 @@
 		<text transform="matrix(1 0 0 1 321.4643 200.6895)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">k</text>
 	</g>
 	<g>
-
-			<path fill="#009345" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		<path fill="#009345" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 			M332.4,171.7c0,1.6-1.1,2.8-2.4,2.8h-30.2c-1.3,0-2.4-1.3-2.4-2.8v-7.3c0-1.6,1.1-2.8,2.4-2.8h30.2c1.3,0,2.4,1.3,2.4,2.8V171.7z"></path>
 		<text transform="matrix(1 0 0 1 300.2285 170.9986)" fill="#FFFFFF" font-family="'TrebuchetMS'" font-size="10px">Strong</text>
 	</g>
 	<g>
-
-			<path fill="#85C779" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		<path fill="#85C779" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 			M332.4,186.3c0,1.6-1.1,2.8-2.4,2.8h-30.2c-1.3,0-2.4-1.3-2.4-2.8V179c0-1.6,1.1-2.8,2.4-2.8h30.2c1.3,0,2.4,1.3,2.4,2.8V186.3z"></path>
 		<text transform="matrix(1 0 0 1 303.3217 186.1231)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Good</text>
 	</g>
 </g >
 <g id="steps" display="inline">
-
 	<g>
 		<polygon fill="#D0D2D3" points="37.5,31.4 5.5,31.4 5.5,11.7 37.5,11.7 53.5,21.4 		"></polygon>
 		<rect x="8.4" y="16.5" fill="none" width="40.5" height="18.6"></rect>
@@ -80,7 +91,6 @@
 		<text transform="matrix(1 0 0 1 13.3718 169.3396)" fill="#231F20" font-family="'TrebuchetMS'" font-size="6px">Visual</text>
 		<text transform="matrix(1 0 0 1 13.3718 175.3396)" fill="#231F20" font-family="'TrebuchetMS'" font-size="6px">variables</text>
 	</g>
-
 	<g id="step_arrow_0">
 		<g transform="translate(0,-90)">
 			<line  fill="none" stroke="#DBDCDD" stroke-width="14.173"  stroke-linejoin="round" x1="22.7" y1="32.6" x2="22.7" y2="85.7"></line>
@@ -95,28 +105,23 @@
 			<line fill="none" stroke="#DBDCDD" stroke-width="14.173"  stroke-linejoin="round" x1="22.7" y1="119.2" x2="22.4" y2="150"></line>
         <polygon fill="#DBDCDD" points="9.3,146.6 22.4,149.2 35.5,146.6 22.4,161.2 			"></polygon>
 		</g>
-
 </g>
 <g id="data" display="inline" >
-
 	<g id="quantitative" onclick="selectDataBox(this);" class="guiElement">
 			<path fill="#FABDA7" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 			M330,17.8c0,1.6-0.6,2.8-1.4,2.8H186.1c-0.8,0-1.4-1.3-1.4-2.8v-7.3c0-1.6,0.6-2.8,1.4-2.8h142.4c0.8,0,1.4,1.3,1.4,2.8V17.8z"></path>
 		<text transform="matrix(1 0 0 1 222.7287 17.1731)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Quantitative</text>
 	</g>
-
 	<g id="qualitative" onclick="selectDataBox(this);" class="guiElement" >
 			<path fill="#FABDA7" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 			M172.6,17.4c0,1.6-0.7,2.8-1.6,2.8H69c-0.9,0-1.6-1.3-1.6-2.8V10c0-1.6,0.7-2.8,1.6-2.8h101.9c0.9,0,1.6,1.3,1.6,2.8V17.4z"></path>
 		<text transform="matrix(1 0 0 1 92.1405 17.1731)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Qualitative</text>
 	</g>
-
 	<g id="quantitative_ratio" onclick="selectDataBox(this);" class="guiElement" >
 			<path fill="#FABDA7" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 			M330,34.8c0,1.6-1.4,2.8-3.1,2.8h-86.3c-1.7,0-3.1-1.3-3.1-2.8v-7.3c0-1.6,1.4-2.8,3.1-2.8h86.3c1.7,0,3.1,1.3,3.1,2.8V34.8z"></path>
 		<text transform="matrix(1 0 0 1 268.5175 34.5067)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Ratio</text>
 	</g>
-
 	<g id="quantitative_ratio_relative" onclick="selectDataBox(this);" class="guiElement" >
 	<g id="quantitative_ratio_relative_arrow">
 		<polyline fill="none" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" points="
@@ -127,18 +132,15 @@
 			M276.5,50.6c0,1.6-0.6,2.8-1.3,2.8h-36.4c-0.7,0-1.3-1.3-1.3-2.8v-7.3c0-1.6,0.6-2.8,1.3-2.8h36.4c0.7,0,1.3,1.3,1.3,2.8V50.6z"></path>
 		<text transform="matrix(1 0 0 1 239.0469 50.4503)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Relative</text>
 	</g>
-
 	<g id="quantitative_ratio_absolute" onclick="selectDataBox(this);" class="guiElement" >
 	<g id="quantitative_ratio_absolute_arrow">
 			<line fill="none" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" x1="304.9" y1="53.5" x2="304.9" y2="92.8"></line>
 			<polygon fill="#808184" points="302.3,90.8 304.9,92 307.5,90.8 304.9,97.1 			"></polygon>
 	</g>
-
 		<path fill="#FABDA7" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 		M330,50.6c0,1.6-0.7,2.8-1.5,2.8h-40.7c-0.8,0-1.5-1.3-1.5-2.8v-7.3c0-1.6,0.7-2.8,1.5-2.8h40.7c0.8,0,1.5,1.3,1.5,2.8V50.6z"></path>
 	<text transform="matrix(1 0 0 1 288.299 50.4505)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Absolute</text>
 	</g>
-
 		<g id="qualitative_ordinal" onclick="selectDataBox(this);" class="guiElement" >
 		<g id="qualitative_ordinal_arrow">
 		<polyline fill="none" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" points="
@@ -149,7 +151,6 @@
 			M172.6,34.8c0,1.6-0.6,2.8-1.4,2.8h-38.7c-0.8,0-1.4-1.3-1.4-2.8v-7.3c0-1.6,0.6-2.8,1.4-2.8h38.7c0.8,0,1.4,1.3,1.4,2.8V34.8z"></path>
 		<text transform="matrix(1 0 0 1 135.9437 34.5066)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Ordinal</text>
 	</g>
-
 	<g id="qualitative_nominal" onclick="selectDataBox(this);" class="guiElement" >
 	<g id="qualitative_nominal_arrow">
 			<line fill="none" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" x1="96.9" y1="37.6" x2="96.9" y2="92.2"></line>
@@ -159,7 +160,6 @@
 			M113.7,34.8c0,1.6-0.7,2.8-1.6,2.8h-44c-0.9,0-1.6-1.3-1.6-2.8v-7.3c0-1.6,0.7-2.8,1.6-2.8h44c0.9,0,1.6,1.3,1.6,2.8V34.8z"></path>
 		<text transform="matrix(1 0 0 1 71.5583 34.425)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Nominal</text>
 	</g>
-
 	<g id="quantitative_interval" onclick="selectDataBox(this);" class="guiElement" >
 	<g id="quantitative_interval_arrow">
 			<line fill="none" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" x1="189.6" y1="37.6" x2="189.6" y2="92.2"></line>
@@ -169,10 +169,8 @@
 			M227.2,34.8c0,1.6-0.6,2.8-1.4,2.8h-39.7c-0.8,0-1.4-1.3-1.4-2.8v-7.3c0-1.6,0.6-2.8,1.4-2.8h39.7c0.8,0,1.4,1.3,1.4,2.8V34.8z"></path>
 		<text transform="matrix(1 0 0 1 188.6098 34.4249)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Interval</text>
 	</g>
-
 </g>
 <g id="perception" display="inline">
-
 	<g id="perception_associative" onclick="selectPerceptionBox(this);" class="guiElement" >
 		<g>
 			<line fill="none" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" x1="96.9" y1="116.4" x2="96.9" y2="135.9"></line>
@@ -182,7 +180,6 @@
 			M137.7,113.5c0,1.6-1.3,2.8-2.8,2.8H65.1c-1.6,0-4.8-1.3-4.8-2.8v-12.2c0-1.6,3.3-2.8,4.8-2.8h69.8c1.6,0,2.8,1.3,2.8,2.8V113.5z"></path>
 		<text transform="matrix(1 0 0 1 76.2256 110.4219)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Associative</text>
 	</g>
-
 	<g id="perception_ordered" onclick="selectPerceptionBox(this);" class="guiElement" >
 	<g>
 			<line fill="none" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" x1="189.3" y1="135.3" x2="189.3" y2="116.4"></line>
@@ -192,7 +189,6 @@
 			M225.8,113.5c0,1.6-1.3,2.8-2.8,2.8h-69.8c-1.6,0-2.8-1.3-2.8-2.8v-12.2c0-1.6,1.3-2.8,2.8-2.8H223c1.6,0,2.8,1.3,2.8,2.8V113.5z"></path>
 		<text transform="matrix(1 0 0 1 170.9114 110.4219)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Ordered</text>
 	</g>
-
 	<g id="perception_quantitative" onclick="selectPerceptionBox(this);" class="guiElement" >
 	<g>
 			<line fill="none" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" x1="276.4" y1="134.3" x2="276.4" y2="116.4"></line>
@@ -202,66 +198,452 @@
 			M315,113.5c0,1.6-1.3,2.8-2.8,2.8h-69.8c-1.6,0-2.8-1.3-2.8-2.8v-12.2c0-1.6,1.3-2.8,2.8-2.8h69.8c1.6,0,2.8,1.3,2.8,2.8V113.5z"></path>
 		<text transform="matrix(1 0 0 1 250.2725 110.4219)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Quantitative</text>
 	</g>
-
 </g>
 <g id="visvars" display="inline">
-
 	<g id="quantitative_size" onclick="selectVisvarBox(this);" class="guiElement" >
 			<path fill="#009345" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 			M304.9,151.6c0,1.6-1.7,2.8-3.7,2.8h-47.8c-2.1,0-3.7-1.3-3.7-2.8v-7.3c0-1.6,1.7-2.8,3.7-2.8h47.8c2.1,0,3.7,1.3,3.7,2.8V151.6z"></path>
 		<text transform="matrix(1 0 0 1 268.373 151.4151)" fill="#FFFFFF" font-family="'TrebuchetMS'" font-size="10px">Size</text>
 	</g>
-
 	<g id="associative_form" onclick="selectVisvarBox(this);" class="guiElement" >
 				<path fill="#85C779" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 				M124.4,170.7c0,1.6-1.7,2.8-3.7,2.8H72.9c-2.1,0-3.7-1.3-3.7-2.8v-7.3c0-1.6,1.7-2.8,3.7-2.8h47.8c2.1,0,3.7,1.3,3.7,2.8V170.7z"></path>
 			<text transform="matrix(1 0 0 1 85.4087 170.4986)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Form</text>
 		</g>
-
 		<g id="associative_orientation" onclick="selectVisvarBox(this);" class="guiElement" >
 				<path fill="#E6EEC1" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 				M124.4,208.9c0,1.6-1.7,2.8-3.7,2.8H72.9c-2.1,0-3.7-1.3-3.7-2.8v-7.3c0-1.6,1.7-2.8,3.7-2.8h47.8c2.1,0,3.7,1.3,3.7,2.8V208.9z"></path>
 			<text transform="matrix(1 0 0 1 71.1802 208.6651)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Orientation</text>
 		</g>
-
 		<g id="associative_colour" onclick="selectVisvarBox(this);" class="guiElement" >
 				<path fill="#009345" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 				M124.4,151.6c0,1.6-1.7,2.8-3.7,2.8H72.9c-2.1,0-3.7-1.3-3.7-2.8v-7.3c0-1.6,1.7-2.8,3.7-2.8h47.8c2.1,0,3.7,1.3,3.7,2.8V151.6z"></path>
 			<text transform="matrix(1 0 0 1 82.3032 151.4151)" fill="#FFFFFF" font-family="'TrebuchetMS'" font-size="10px">Colour</text>
 		</g>
-
 		<g id="associative_texture" onclick="selectVisvarBox(this);" class="guiElement" >
 				<path fill="#E6EEC1" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 				M124.4,189.8c0,1.6-1.7,2.8-3.7,2.8H72.9c-2.1,0-3.7-1.3-3.7-2.8v-7.3c0-1.6,1.7-2.8,3.7-2.8h47.8c2.1,0,3.7,1.3,3.7,2.8V189.8z"></path>
 			<text transform="matrix(1 0 0 1 79.9131 189.5816)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Texture</text>
 		</g>
-
-
 	<g id="ordered_texture" onclick="selectVisvarBox(this);" class="guiElement" >
 				<path fill="#E6EEC1" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 				M216.9,189.8c0,1.6-1.7,2.8-3.7,2.8h-47.8c-2.1,0-3.7-1.3-3.7-2.8v-7.3c0-1.6,1.7-2.8,3.7-2.8h47.8c2.1,0,3.7,1.3,3.7,2.8V189.8z
 				"></path>
 			<text transform="matrix(1 0 0 1 172.6086 189.5821)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Texture</text>
 		</g>
-
 		<g id="ordered_value" onclick="selectVisvarBox(this);" class="guiElement" >
 				<path fill="#009345" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 				M216.9,151.6c0,1.6-1.7,2.8-3.7,2.8h-47.8c-2.1,0-3.7-1.3-3.7-2.8v-7.3c0-1.6,1.7-2.8,3.7-2.8h47.8c2.1,0,3.7,1.3,3.7,2.8V151.6z
 				"></path>
 			<text transform="matrix(1 0 0 1 177.1511 151.4151)" fill="#FFFFFF" font-family="'TrebuchetMS'" font-size="10px">Value</text>
 		</g>
-
 		<g id="ordered_size" onclick="selectVisvarBox(this);" class="guiElement" >
 				<path fill="#85C779" stroke="#808184" stroke-width="1.4173" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 				M216.9,170.7c0,1.6-1.7,2.8-3.7,2.8h-47.8c-2.1,0-3.7-1.3-3.7-2.8v-7.3c0-1.6,1.7-2.8,3.7-2.8h47.8c2.1,0,3.7,1.3,3.7,2.8V170.7z
 				"></path>
 			<text transform="matrix(1 0 0 1 180.325 170.4981)" fill="#231F20" font-family="'TrebuchetMS'" font-size="10px">Size</text>
 		</g>
-
-
 </g>
 </svg>
+
+
   <div id="mapDiv"></div>
+
 </div>
+
+
+
+<div id="placeholder_for_patterns">
+  <!--########## Including SVG fill patterns to be used in Texture, Form and Orientation fills          -->
+  <!--courtesy of the excellent patterfills project of Irene Ros @ http://iros.github.io/patternfills/  -->
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="circles-1" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSJ3aGl0ZSIgLz4KICA8Y2lyY2xlIGN4PSIxIiBjeT0iMSIgcj0iMSIgZmlsbD0iYmxhY2siLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="circles-2" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PScxLjUnIGN5PScxLjUnIHI9JzEuNScgZmlsbD0nYmxhY2snLz4KPC9zdmc+Cg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="circles-3" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PScyJyBjeT0nMicgcj0nMicgZmlsbD0nYmxhY2snLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="circles-4" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PScyLjUnIGN5PScyLjUnIHI9JzIuNScgZmlsbD0nYmxhY2snLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="circles-5" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PSczJyBjeT0nMycgcj0nMycgZmlsbD0nYmxhY2snLz4KPC9zdmc+Cg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="circles-6" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PSczLjUnIGN5PSczLjUnIHI9JzMuNScgZmlsbD0nYmxhY2snLz4KPC9zdmc+Cg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="circles-7" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PSc0JyBjeT0nNCcgcj0nNCcgZmlsbD0nYmxhY2snLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="circles-8" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PSc0LjUnIGN5PSc0LjUnIHI9JzQuNScgZmlsbD0nYmxhY2snLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="circles-9" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PSc1JyBjeT0nNScgcj0nNScgZmlsbD0nYmxhY2snLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="diagonal-stripe-1" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9J2JsYWNrJyBzdHJva2Utd2lkdGg9JzEnLz4KPC9zdmc+Cg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="diagonal-stripe-2" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9J2JsYWNrJyBzdHJva2Utd2lkdGg9JzInLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="diagonal-stripe-3" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9J2JsYWNrJyBzdHJva2Utd2lkdGg9JzMnLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="diagonal-stripe-4" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSdibGFjaycvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9J3doaXRlJyBzdHJva2Utd2lkdGg9JzMnLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="diagonal-stripe-5" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSdibGFjaycvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9J3doaXRlJyBzdHJva2Utd2lkdGg9JzInLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="diagonal-stripe-6" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSdibGFjaycvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9J3doaXRlJyBzdHJva2Utd2lkdGg9JzEnLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="dots-1" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMScgaGVpZ2h0PScxJyBmaWxsPSdibGFjaycgLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="dots-2" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMicgaGVpZ2h0PScyJyBmaWxsPSdibGFjaycgLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="dots-3" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMycgaGVpZ2h0PSczJyBmaWxsPSdibGFjaycgLz4KPC9zdmc+Cg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="dots-4" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nNCcgaGVpZ2h0PSc0JyBmaWxsPSdibGFjaycgLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="dots-5" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nNScgaGVpZ2h0PSc1JyBmaWxsPSdibGFjaycgLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="dots-6" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nNicgaGVpZ2h0PSc2JyBmaWxsPSdibGFjaycgLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="dots-7" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nNycgaGVpZ2h0PSc3JyBmaWxsPSdibGFjaycgLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="dots-8" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nOCcgaGVpZ2h0PSc4JyBmaWxsPSdibGFjaycgLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="dots-9" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nOScgaGVpZ2h0PSc5JyBmaWxsPSdibGFjaycgLz4KPC9zdmc+" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="horizontal-stripe-1" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMTAnIGhlaWdodD0nMScgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="horizontal-stripe-2" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMTAnIGhlaWdodD0nMicgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="horizontal-stripe-3" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMTAnIGhlaWdodD0nMycgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="horizontal-stripe-4" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMTAnIGhlaWdodD0nNCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="horizontal-stripe-5" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMTAnIGhlaWdodD0nNScgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="horizontal-stripe-6" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMTAnIGhlaWdodD0nNicgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="horizontal-stripe-7" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMTAnIGhlaWdodD0nNycgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="horizontal-stripe-8" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMTAnIGhlaWdodD0nOCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="horizontal-stripe-9" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMTAnIGhlaWdodD0nOScgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="vertical-stripe-1" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMScgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="vertical-stripe-2" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMicgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="vertical-stripe-3" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMycgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="vertical-stripe-4" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nNCcgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="vertical-stripe-5" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nNScgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="vertical-stripe-6" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nNicgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="vertical-stripe-7" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nNycgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="vertical-stripe-8" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nOCcgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="vertical-stripe-9" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nOScgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg==" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="8" width="8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="crosshatch" patternUnits="userSpaceOnUse" width="8" height="8">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4JyBoZWlnaHQ9JzgnPgogIDxyZWN0IHdpZHRoPSc4JyBoZWlnaHQ9JzgnIGZpbGw9JyNmZmYnLz4KICA8cGF0aCBkPSdNMCAwTDggOFpNOCAwTDAgOFonIHN0cm9rZS13aWR0aD0nMC41JyBzdHJva2U9JyNhYWEnLz4KPC9zdmc+Cg==" x="0" y="0" width="8" height="8">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="houndstooth" patternUnits="userSpaceOnUse" width="10" height="10">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMTAnIGhlaWdodD0nMTAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+CiAgPHBhdGggZD0nTTAgMEw0IDQnIHN0cm9rZT0nI2FhYScgZmlsbD0nI2FhYScgc3Ryb2tlLXdpZHRoPScxJy8+CiAgPHBhdGggZD0nTTIuNSAwTDUgMi41TDUgNUw5IDlMNSA1TDEwIDVMMTAgMCcgc3Ryb2tlPScjYWFhJyBmaWxsPScjYWFhJyBzdHJva2Utd2lkdGg9JzEnLz4KICA8cGF0aCBkPSdNNSAxMEw1IDcuNUw3LjUgMTAnIHN0cm9rZT0nI2FhYScgZmlsbD0nI2FhYScgc3Ryb2tlLXdpZHRoPScxJy8+Cjwvc3ZnPgo=" x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="5" width="5" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="lightstripe" patternUnits="userSpaceOnUse" width="5" height="5">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1JyBoZWlnaHQ9JzUnPgogIDxyZWN0IHdpZHRoPSc1JyBoZWlnaHQ9JzUnIGZpbGw9J3doaXRlJy8+CiAgPHBhdGggZD0nTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVonIHN0cm9rZT0nIzg4OCcgc3Ryb2tlLXdpZHRoPScxJy8+Cjwvc3ZnPg==" x="0" y="0" width="5" height="5">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="5" width="5" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="smalldot" patternUnits="userSpaceOnUse" width="5" height="5">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1JyBoZWlnaHQ9JzUnPgo8cmVjdCB3aWR0aD0nNScgaGVpZ2h0PSc1JyBmaWxsPScjZmZmJy8+CjxyZWN0IHdpZHRoPScxJyBoZWlnaHQ9JzEnIGZpbGw9JyNjY2MnLz4KPC9zdmc+" x="0" y="0" width="5" height="5">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="49" width="6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="verticalstripe" patternUnits="userSpaceOnUse" width="6" height="49">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc2JyBoZWlnaHQ9JzQ5Jz4KICA8cmVjdCB3aWR0aD0nMycgaGVpZ2h0PSc1MCcgZmlsbD0nI2ZmZicvPgogIDxyZWN0IHg9JzMnIHdpZHRoPScxJyBoZWlnaHQ9JzUwJyBmaWxsPScjY2NjJy8+Cjwvc3ZnPgo=" x="0" y="0" width="6" height="49">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="6" width="6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="whitecarbon" patternUnits="userSpaceOnUse" width="6" height="6">
+        <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNicgaGVpZ2h0PSc2Jz4KICA8cmVjdCB3aWR0aD0nNicgaGVpZ2h0PSc2JyBmaWxsPScjZWVlZWVlJy8+CiAgPGcgaWQ9J2MnPgogICAgPHJlY3Qgd2lkdGg9JzMnIGhlaWdodD0nMycgZmlsbD0nI2U2ZTZlNicvPgogICAgPHJlY3QgeT0nMScgd2lkdGg9JzMnIGhlaWdodD0nMicgZmlsbD0nI2Q4ZDhkOCcvPgogIDwvZz4KICA8dXNlIHhsaW5rOmhyZWY9JyNjJyB4PSczJyB5PSczJy8+Cjwvc3ZnPg==" x="0" y="0" width="6" height="6">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <!--########## End of  SVG fill patterns -->
+</div>
+
+
+
 </body>
 </html>
