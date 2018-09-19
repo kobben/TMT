@@ -39,14 +39,14 @@
           "type": "quantitative"
         },
         "size": {"value" : 500},
-        "fill": {"value" : "red"},
+        "fill": {"value" : "#009"},
         "shape": {
           "field": "TEMPLATE",
-          "type": "nominal"
-        },
-        "legend": {
-          "orient": "right",
-          "title": "TEMPLATE"
+          "type": "nominal",
+          "legend": {
+            "orient": "right",
+            "title": "TEMPLATE"
+          }
         }
       }
     }
