@@ -6,6 +6,13 @@
   "config": {
     "view": {
       "stroke": "none"
+    },
+    "legend": {
+      "orient": "right",
+      "titlePadding": 15,
+      "titleFontSize": 15,
+      "titleFontWeight": "bold",
+      "symbolSize": 300
     }
   },
   "data": {
@@ -44,7 +51,6 @@
           "field": "TEMPLATE",
           "type": "nominal",
           "legend": {
-            "orient": "right",
             "title": "TEMPLATE"
           }
         }

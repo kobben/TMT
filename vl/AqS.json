@@ -13,6 +13,12 @@
         "strokeWidth": 0.2,
         "fill": "#cff"
       }
+    },
+    "legend": {
+      "orient": "right",
+      "titlePadding": 15,
+      "titleFontSize": 15,
+      "titleFontWeight": "bold"
     }
   },
   "data": {
@@ -56,7 +62,6 @@
             "range": [0,5000]
           },
           "legend": {
-            "orient": "right",
             "title": "TEMPLATE"
           }
         }
