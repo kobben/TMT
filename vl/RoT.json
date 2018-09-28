@@ -50,6 +50,7 @@
             ]
           },
           "legend": {
+            "type": "symbol",
             "title": "TEMPLATE"
           }
         }

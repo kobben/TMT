@@ -6,6 +6,16 @@
   "config": {
     "view": {
       "stroke": "none"
+    },
+    "legend": {
+      "orient": "right",
+      "titlePadding": 15,
+      "titleFontSize": 15,
+      "titleFontWeight": "bold",
+      "labelOffset": 20,
+      "symbolSize": 300,
+      "symbolStrokeWidth": 0.5,
+      "symbolType": "M-1,1h3v-2h-3Z"
     }
   },
   "data": {
@@ -41,7 +51,6 @@
           },
           "legend": {
             "type": "symbol",
-            "orient": "right",
             "title": "TEMPLATE"
           }
         }
