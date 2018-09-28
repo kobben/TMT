@@ -10,9 +10,10 @@ Author: Barend Köbben - <a href="mailto:b.j.kobben@utwente.nl">b.j.kobben@utwen
 
 #### Changelist:
 
-##### version 0.4 [12 September 2018]
+##### version 0.4 [25 September 2018]
+* added `fillDataViewer(attrib)` to preview values for selected attribs
 * using point-in-area symbols for 'form' visvar 
-* moved legend to never overlap map
+* moved legend to right side
 ##### version 0.3 [1 September 2018]
 * added data/attribute/title chooser to gui and logic 
 * implemented vega-lite json templating
