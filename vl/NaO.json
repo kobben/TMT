@@ -41,9 +41,14 @@
           "type": "nominal",
           "scale": {
             "range": [
-              "url(#diagonal-stripe-1)",
-              "url(#horizontal-stripe-1)",
-              "url(#vertical-stripe-1)"
+              "url(#orientation-0)",
+              "url(#orientation-90)",
+              "url(#orientation-45)",
+              "url(#orientation-135)",
+              "url(#orientation-22.5)",
+              "url(#orientation-67.5)",
+              "url(#orientation-112.5)",
+              "url(#orientation-157.5)"
             ]
           },
           "legend": {

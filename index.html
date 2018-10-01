@@ -24,20 +24,26 @@
 		<table>
 			<tr>
 				<td>Spatial data:</td>
-				<td><select id="dataChooser" name="mapData" onchange="selectMapData(this.value)">
+				<td colspan="2"><select id="dataChooser" name="mapData" onchange="selectMapData(this.value)">
 					<option value="area">Municipalities in Overijssel (areas)</option>
 					<!--<option value="line">State Roads in Overijssel (lines)</option>-->
 				</select></td>
 			</tr>
 			<tr>
 				<td>Attribute data:</td>
-				<td><select id="attrChooser" name="mapAttrib" onchange="selectMapAttr(this.value)">
+				<td><select id="attrChooser" name="mapAttrib" style="width:250px;" onchange="selectMapAttr(this.value)">
 					<option value="undefined">choose from list...</option>
-				</select></td>
+				</select>
+        </td><td>
+        <!-- dataViewer dropdown, starts out invisible: -->
+          <select id="dataViewer" name="dataViewer" style="display:none;width:120px;background:#ddd;" onchange="selectDataViewer()">
+          <option value="undefined"></option>
+        </select>
+        </td>
 			</tr>
 			<tr>
 				<td>Map title:</td>
-				<td><input type="text" id="titleChooser" name="mapTitle" size="4" onchange="selectMapTitle(this.value)"/>
+        <td colspan="2"><input type="text" id="titleChooser" name="mapTitle" size="4" onchange="selectMapTitle(this.value)"/>
 				</td>
 			</tr>
 		</table>
@@ -246,14 +252,13 @@
 </g>
 </svg>
 
-
   <div id="mapDiv"></div>
 
 </div>
 
 
 
-<div id="placeholder_for_patterns">
+<div display="none" id="placeholder_for_patterns">
   <!--########## Including SVG fill patterns to be used in Texture, Form and Orientation fills          -->
   <!--courtesy of the excellent patterfills project of Irene Ros @ http://iros.github.io/patternfills/  -->
   <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -334,6 +339,8 @@
         <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9J2JsYWNrJyBzdHJva2Utd2lkdGg9JzEnLz4KPC9zdmc+Cg==" x="0" y="0" width="10" height="10">
         </image>
       </pattern>
+    </defs>
+  </svg>
     </defs>
   </svg>
   <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -640,7 +647,88 @@
       </pattern>
     </defs>
   </svg>
-  <!--########## End of  SVG fill patterns -->
+  <!--NEWLY MADE: rotations of vertical-stripe-1:-->
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="orientation-0" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(0)">
+        <image
+            xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMScgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg=="
+            x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="orientation-22.5" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(22.5)">
+        <image
+            xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMScgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg=="
+            x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="orientation-45" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+        <image
+            xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMScgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg=="
+            x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="orientation-67.5" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(67.5)">
+        <image
+            xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMScgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg=="
+            x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="orientation-90" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(90)">
+        <image
+            xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMScgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg=="
+            x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="orientation-112.5" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(112.5)">
+        <image
+            xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMScgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg=="
+            x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="orientation-135" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(135)">
+        <image
+            xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMScgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg=="
+            x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <pattern id="orientation-157.5" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(157.5)">
+        <image
+            xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8cmVjdCB4PScwJyB5PScwJyB3aWR0aD0nMScgaGVpZ2h0PScxMCcgZmlsbD0nYmxhY2snIC8+Cjwvc3ZnPg=="
+            x="0" y="0" width="10" height="10">
+        </image>
+      </pattern>
+    </defs>
+  </svg>
+      <!--########## End of  SVG fill patterns -->
 </div>
 
 
