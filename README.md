@@ -13,7 +13,7 @@ Author: Barend Köbben - <a href="mailto:b.j.kobben@utwente.nl">b.j.kobben@utwen
 ##### version 0.4 [25 September 2018]
 * added `fillDataViewer(attrib)` to preview values for selected attribs
 * using point-in-area symbols for 'form' visvar 
-* added hatched fills fro orientation visvar
+* added hatched fills for orientation visvar
 * moved legend to right side
 ##### version 0.3 [1 September 2018]
 * added data/attribute/title chooser to gui and logic 
