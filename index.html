@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!--
+* Thematic Map Tutor
+*
+* Licensed under GNU General Public License GPL v3.0
+* SPDX-License-Identifier: GPL-3.0-only
+*
+* ©2018 by the author
+* @author Barend Köbben - b.j.kobben@utwente.nl
+**
+* changes/versions: see ChangeList in README.md
+-->
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width"/>
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link rel="stylesheet" type="text/css" href="./css/patterns.css">
-  <!--<script src="https://cdn.jsdelivr.net/npm/vega@3"></script>-->
-  <!--<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>-->
-  <!--<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>-->
+  <!--<script src="https://cdn.jsdelivr.net/npm/vega@4.2.0"></script>-->
+  <!--<script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc6"></script>-->
+  <!--<script src="https://cdn.jsdelivr.net/npm/vega-embed@3.19.2"></script>-->
   <script src="lib/vega.min.js"></script>
   <script src="lib/vega-lite.min.js"></script>
   <script src="lib/vega-embed.min.js"></script>
@@ -259,8 +272,10 @@
 
 
 <div display="none" id="placeholder_for_patterns">
-  <!--########## Including SVG fill patterns to be used in Texture, Form and Orientation fills          -->
-  <!--courtesy of the excellent patterfills project of Irene Ros @ http://iros.github.io/patternfills/  -->
+  <!-- ##########################################################################################    -->
+  <!-- ########## Placeholder for the SVG pattern fills to be used in Texture, Form and Orientation fills          -->
+  <!-- from the excellent patterfills project, ©2014 Irene Ros (MIT License, see http://iros.github.io/patternfills/)-->
+  <!-- ##########################################################################################    -->
   <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
     <defs>
       <pattern id="circles-1" patternUnits="userSpaceOnUse" width="10" height="10">
@@ -729,7 +744,9 @@
       </pattern>
     </defs>
   </svg>
-      <!--########## End of  SVG fill patterns -->
+  <!-- ##########################################################################################    -->
+  <!--########## End of  SVG fill patterns -->
+  <!-- ##########################################################################################    -->
 </div>
 
 

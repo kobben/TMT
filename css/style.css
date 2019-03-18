@@ -52,6 +52,7 @@ h3 {
   cursor: pointer;
 }
 
+
 #guiDiv {
   display: block;
   position: relative;
@@ -101,13 +102,11 @@ h3 {
 select, input {
   margin: 3px;
   padding: 0px 5px 0px 5px;
-  font-size: 1em;
   color: white;
   height: 25px;
   width: 380px;
   display: inline;
   font-family: 'TrebuchetMS', Verdana, sans-serif;
-  color: white;
   font-size: 0.9em;
   background: #c1c1c1;
   border-radius: 5px;
@@ -115,7 +114,6 @@ select, input {
   border-width: 0.5px;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
   box-shadow: none !important;
   -moz-autofill: color: #c1c1c1 !important;
   -webkit-autofill: color: #c1c1c1 !important;
@@ -125,7 +123,6 @@ input {
   width: 368px;
   height: 23px;
 }
-
 
 .tooltip {
   position: absolute;
@@ -145,3 +142,8 @@ input {
   margin-bottom: 3px;
 }
 
+.area_background{
+  fill: black;
+  stroke: yellow;
+  stroke-width: 3px;
+}
