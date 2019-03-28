@@ -19,6 +19,8 @@ Included external libraries:
 
 #### Changelist:
 
+##### version 0.5 [28 March 2019]
+* added an OER (Online Educational Resource) explaining the principles of the Cartographic Grammar.
 ##### version 0.4 [25 Oktober 2018]
 * added `fillDataViewer(attrib)` to preview values for selected attribs
 * using point-in-area symbols for 'form' visvar 
