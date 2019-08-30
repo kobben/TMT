@@ -1,5 +1,5 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.0.0-rc6.json",
+  
   "width": 700,
   "height": 580,
   "padding": 0,
@@ -54,10 +54,7 @@
           "field": "TEMPLATE",
           "type": "quantitative",
           "scale": {
-            "range": [
-              0,
-              5000
-            ]
+            "range": [0,5000]
           },
           "legend": {
             "title": "TEMPLATE"

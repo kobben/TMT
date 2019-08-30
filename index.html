@@ -7,7 +7,7 @@
 * Licensed under GNU General Public License GPL v3.0
 * SPDX-License-Identifier: GPL-3.0-only
 *
-* ©2018 by the author
+* ©2019 by the author
 * @author Barend Köbben - b.j.kobben@utwente.nl
 **
 * changes/versions: see ChangeList in README.md
@@ -18,12 +18,14 @@
   <meta name="viewport" content="width=device-width"/>
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link rel="stylesheet" type="text/css" href="./css/patterns.css">
-  <!--<script src="https://cdn.jsdelivr.net/npm/vega@4.2.0"></script>-->
-  <!--<script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc6"></script>-->
-  <!--<script src="https://cdn.jsdelivr.net/npm/vega-embed@3.19.2"></script>-->
-  <script src="lib/vega.min.js"></script>
-  <script src="lib/vega-lite.min.js"></script>
-  <script src="lib/vega-embed.min.js"></script>
+
+<!--  <script src="https://cdn.jsdelivr.net/npm/vega@5.4.0"></script>-->
+<!--  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0-beta.0"></script>-->
+<!--  <script src="https://cdn.jsdelivr.net/npm/vega-embed@4.2.1"></script>-->
+  <script src="lib/vega@5.4.0.min.js"></script>
+  <script src="lib/vega-lite@4.0.0-beta.min.js"></script>
+  <script src="lib/vega-embed@4.2.1.min.js"></script>
+
   <script src="lib/TMT.js"></script>
   <title>Thematic Map Tutor</title>
 </head>
@@ -35,15 +37,17 @@
   <p><form action="./OER/index.html"><input type="submit" value="GO TO THE EXPLANATION"></input><input type="reset" value="SKIP EXPLANATION" onclick="OERmessage.style.display='none';"></input></form></p>
 </header>
 
-<h1>Thematic Map Tutor</h1>
+<h1 id="mapTitle" class="normal">Thematic Map Tutor</h1>
 <div id="guiDiv">
 	<div id="dataDiv">
 		<table>
 			<tr>
 				<td>Spatial data:</td>
 				<td colspan="2"><select id="dataChooser" name="mapData" onchange="selectMapData(this.value)">
-					<option value="area">Municipalities in Overijssel (areas)</option>
-					<!--<option value="line">State Roads in Overijssel (lines)</option>-->
+          <option value="undefined">choose from list...</option>
+					<option value="area">AREAS</option>
+          <option value="line">LINES</option>
+          <!--<option value="point">POINTS</option>-->
 				</select></td>
 			</tr>
 			<tr>
@@ -60,7 +64,7 @@
 			</tr>
 			<tr>
 				<td>Map title:</td>
-        <td colspan="2"><input type="text" id="titleChooser" name="mapTitle" size="4" onchange="selectMapTitle(this.value)"/>
+        <td colspan="2"><input type="text" id="titleChooser" name="mapTitle" size="4" onchange="selectLegendTitle(this.value)"/>
 				</td>
 			</tr>
 		</table>

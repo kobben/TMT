@@ -1,5 +1,5 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.0.0-rc6.json",
+  
   "width": 700,
   "height": 580,
   "padding": 0,
@@ -12,7 +12,10 @@
       "titlePadding": 15,
       "titleFontSize": 15,
       "titleFontWeight": "bold",
-      "symbolSize": 300
+      "labelOffset": 20,
+      "symbolSize": 300,
+      "symbolStrokeWidth": 0.5,
+      "symbolType": "M-1,1h3v-2h-3Z"
     }
   },
   "data": {
@@ -30,27 +33,24 @@
       "mark": {
         "type": "geoshape",
         "stroke": "black",
-        "strokeWidth": 0.2,
-        "fill": "#efe"
-      }
-    },
-    {
-      "mark": "point",
+        "strokeWidth": 0.2
+      },
       "encoding": {
-        "longitude": {
-          "field": "properties.centroid_lon",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "properties.centroid_lat",
-          "type": "quantitative"
-        },
-        "size": {"value" : 500},
-        "fill": {"value" : "#009"},
-        "shape": {
+        "color": {
           "field": "TEMPLATE",
-          "type": "nominal",
+          "type": "quantitative",
+          "scale": {
+            "type": "quantize",
+            "range": [
+              "url(#dots-2)",
+              "url(#dots-4)",
+              "url(#dots-6)",
+              "url(#dots-8)",
+              "url(#dots-9)"
+            ]
+          },
           "legend": {
+            "type": "symbol",
             "title": "TEMPLATE"
           }
         }
@@ -58,8 +58,3 @@
     }
   ]
 }
-
-
-
-
-

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.0.0-rc6.json",
+  
   "width": 700,
   "height": 580,
   "padding": 0,
@@ -11,7 +11,11 @@
       "orient": "right",
       "titlePadding": 15,
       "titleFontSize": 15,
-      "titleFontWeight": "bold"
+      "titleFontWeight": "bold",
+      "labelOffset": 20,
+      "symbolSize": 300,
+      "symbolStrokeWidth": 0.5,
+      "symbolType": "M-1,1h3v-2h-3Z"
     }
   },
   "data": {
@@ -33,12 +37,8 @@
       },
       "encoding": {
         "color": {
-          "bin": true,
           "field": "TEMPLATE",
-          "type": "quantitative",
-          "scale": {
-            "scheme": "greens"
-          },
+          "type": "nominal",
           "legend": {
             "title": "TEMPLATE"
           }
