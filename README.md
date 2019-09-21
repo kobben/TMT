@@ -17,6 +17,8 @@ Included external libraries:
 
 
 #### Changelist:
+##### version 0.7 [10 September 2019]
+* cleaning up versioning for 2019 courses
 ##### version 0.6 [30 August 2019]
 * added choice between AREA and LINE data
 * implemented quantitative strokeWidth encoding
