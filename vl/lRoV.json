@@ -14,17 +14,14 @@
       "labelOffset": 15,
       "labelFontSize": 12,
       "symbolSize": 300,
-      "symbolType": "M-1,0h3Z",
-      "symbolFillColor": "red",
-      "symbolStrokeColor": "red",
-      "symbolStrokeWidth": 5
+      "symbolType": "M-1,0h3Z"
     }
   },
   "data": {
-    "url": "TEMPLATE",
+    "url": "%DATA_URL%",
     "format": {
       "type": "json",
-      "property": "TEMPLATE"
+      "property": "%DATA_PROPERTY%"
     }
   },
   "projection": {
@@ -38,13 +35,13 @@
       },
       "encoding": {
         "stroke": {
-          "field": "TEMPLATE",
+          "field": "%DATA_ATTRIBUTE%",
           "type": "quantitative",
           "scale": {
-            "scheme": "reds"
+            "scheme": "greens"
           },
           "legend": {
-            "title": "TEMPLATE"
+            "title": "%LEGEND_TITLE%"
           }
         }
       }

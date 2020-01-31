@@ -15,10 +15,10 @@
     }
   },
   "data": {
-    "url": "TEMPLATE",
+    "url": "%DATA_URL%",
     "format": {
       "type": "json",
-      "property": "TEMPLATE"
+      "property": "%DATA_PROPERTY%"
     }
   },
   "projection": {
@@ -51,13 +51,13 @@
           "type": "quantitative"
         },
         "size": {
-          "field": "TEMPLATE",
+          "field": "%DATA_ATTRIBUTE%",
           "type": "ordinal",
           "scale": {
-            "range": [0,5000]
+            "range": [100,5000]
           },
           "legend": {
-            "title": "TEMPLATE"
+            "title": "%LEGEND_TITLE%"
           }
         }
       }

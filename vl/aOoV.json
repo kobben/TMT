@@ -19,10 +19,10 @@
     }
   },
   "data": {
-    "url": "TEMPLATE",
+    "url": "%DATA_URL%",
     "format": {
       "type": "json",
-      "property": "TEMPLATE"
+      "property": "%DATA_PROPERTY%"
     }
   },
   "projection": {
@@ -37,13 +37,13 @@
       },
       "encoding": {
         "color": {
-          "field": "TEMPLATE",
+          "field": "%DATA_ATTRIBUTE%",
           "type": "ordinal",
           "scale": {
             "scheme": "greens"
           },
           "legend": {
-            "title": "TEMPLATE"
+            "title": "%LEGEND_TITLE%"
           }
         }
       }

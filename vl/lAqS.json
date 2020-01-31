@@ -8,21 +8,25 @@
     },
     "legend": {
       "orient": "right",
+      "titlePadding": 15,
+      "titleFontSize": 15,
+      "titleFontWeight": "bold"
+    },
+    "legend": {
+      "orient": "right",
       "titlePadding": 0,
       "titleFontSize": 12,
-      "labelOffset": 15,
+      "labelOffset": 3,
       "labelFontSize": 12,
-      "symbolSize": 300,
-      "symbolType": "M-1,0h3Z",
-      "symbolFillColor": "red",
-      "symbolStrokeColor": "red"
+      "symbolSize": 500,
+      "symbolType": "M-1.5,0h3Z"
     }
   },
   "data": {
-    "url": "TEMPLATE",
+    "url": "%DATA_URL%",
     "format": {
       "type": "json",
-      "property": "TEMPLATE"
+      "property": "%DATA_PROPERTY%"
     }
   },
   "projection": {
@@ -37,13 +41,13 @@
       },
       "encoding": {
         "strokeWidth": {
-          "field": "TEMPLATE",
+          "field": "%DATA_ATTRIBUTE%",
           "type": "quantitative",
           "scale": {
             "range": [4,25]
           },
           "legend": {
-            "title": "TEMPLATE"
+            "title": "%LEGEND_TITLE%"
           }
         }
       }

@@ -18,10 +18,10 @@
     "type": "stereographic"
   },
   "data": {
-    "url": "TEMPLATE",
+    "url": "%DATA_URL%",
     "format": {
       "type": "json",
-      "property": "TEMPLATE"
+      "property": "%DATA_PROPERTY%"
     }
   },
   "layer": [
@@ -33,13 +33,13 @@
       },
       "encoding": {
         "color": {
-          "field": "TEMPLATE",
+          "field": "%DATA_ATTRIBUTE%",
           "type": "quantitative",
           "scale": {
             "scheme": "greens"
           },
           "legend": {
-            "title": "TEMPLATE"
+            "title": "%LEGEND_TITLE%"
           }
         }
       }

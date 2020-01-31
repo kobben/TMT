@@ -17,14 +17,21 @@ Included external libraries:
 
 
 #### Changelist:
+##### version 1.0 [5 December 2019]
+* added LINE visvars: texture, form, rotation -- uses polygons of BUFFERed lines (expects a file named %DATA_URL%_buffer).
+* added POINT visvars: colour, form, texture, ~~orientation~~, value and size
+  - for orientation used a workaround from #jwoLondon, in expectation of angle encoding slated for VL 4.1.
+* refactored templating system to use semantic naming: `%TEMPLATE_ITEM%` instead of simple 'TEMPLATE' search & replace - total rewrite of `fillTemplate(items)` and `createMap(guiState)`
+* renamed function `getParameterByName(name)` to more appropriate `getURLParameterByName(name)`  
+* some small changes in CSS styling (eg. data browser)
 ##### version 0.7 [10 September 2019]
-* cleaning up versioning for 2019 courses
+* cleaning up versioning and updated OER for 2019 courses
 ##### version 0.6 [30 August 2019]
 * added choice between AREA and LINE data
 * implemented quantitative strokeWidth encoding
   => in LINE implemented visvars color, value, size - still missing texture, form, rotation
 ##### version 0.5 [1 August 2019]
-* added an OER (Online Educational Resource) explaining the principles of the Cartographic Grammar. Uses `getParameterByName('from_oer')` to test if we need to ask for OER.
+* added an OER (Online Educational Resource) explaining the principles of the Cartographic Grammar. Uses `getURLParameterByName('from_oer')` to test if we need to ask for OER.
 ##### version 0.4 [25 Oktober 2018]
 * added `fillDataViewer(attrib)` to preview values for selected attribs
 * using point-in-area symbols for 'form' visvar 

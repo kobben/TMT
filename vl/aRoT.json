@@ -14,15 +14,14 @@
       "titleFontWeight": "bold",
       "labelOffset": 20,
       "symbolSize": 300,
-      "symbolStrokeWidth": 0.5,
-      "symbolType": "M-1,1h3v-2h-3Z"
+      "symbolStrokeWidth": 0.5
     }
   },
   "data": {
-    "url": "TEMPLATE",
+    "url": "%DATA_URL%",
     "format": {
       "type": "json",
-      "property": "TEMPLATE"
+      "property": "%DATA_PROPERTY%"
     }
   },
   "projection": {
@@ -37,7 +36,7 @@
       },
       "encoding": {
         "color": {
-          "field": "TEMPLATE",
+          "field": "%DATA_ATTRIBUTE%",
           "type": "quantitative",
           "scale": {
             "type": "quantize",
@@ -50,8 +49,7 @@
             ]
           },
           "legend": {
-            "type": "symbol",
-            "title": "TEMPLATE"
+            "title": "%LEGEND_TITLE%"
           }
         }
       }

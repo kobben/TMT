@@ -1,0 +1,67 @@
+{
+  
+  "width": 700,
+  "height": 580,
+  "padding": 0,
+  "config": {
+    "view": {
+      "stroke": "none"
+    },
+    "legend": {
+      "orient": "right",
+      "titlePadding": 15,
+      "titleFontSize": 15,
+      "titleFontWeight": "bold",
+      "labelOffset": 10,
+      "symbolSize": 400,
+      "symbolStroke": "#888888",
+      "symbolStrokeWidth": 0.3
+    }
+  },
+  "data": {
+    "url": "%DATA_URL%",
+    "format": {
+      "type": "json",
+      "property": "%DATA_PROPERTY%"
+    }
+  },
+  "projection": {
+    "type": "stereographic"
+  },
+  "layer": [
+    {
+      "mark": "circle",
+      "encoding": {
+        "longitude": {
+          "field": "properties.centroid_lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "properties.centroid_lat",
+          "type": "quantitative"
+        },
+        "stroke": {"value": "#888888"},
+        "strokeWidth": {"value": 0.3},
+        "size": {"value" : 400},
+        "fill": {
+          "field": "%DATA_ATTRIBUTE%",
+          "type": "quantitative",
+          "scale": {
+            "type": "quantize",
+            "range": [
+              "url(#dots-2)",
+              "url(#dots-4)",
+              "url(#dots-6)",
+              "url(#dots-7)",
+              "url(#dots-9)"
+            ]
+          },
+          "legend": {
+            "type": "symbol",
+            "title": "%LEGEND_TITLE%"
+          }
+        }
+      }
+    }
+  ]
+}

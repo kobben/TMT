@@ -19,10 +19,10 @@
     }
   },
   "data": {
-    "url": "TEMPLATE",
+    "url": "%DATA_URL%",
     "format": {
       "type": "json",
-      "property": "TEMPLATE"
+      "property": "%DATA_PROPERTY%"
     }
   },
   "projection": {
@@ -37,22 +37,22 @@
       },
       "encoding": {
         "color": {
-          "field": "TEMPLATE",
+          "field": "%DATA_ATTRIBUTE%",
           "type": "nominal",
           "scale": {
             "range": [
-              "url(#orientation-0)",
-              "url(#orientation-90)",
-              "url(#orientation-45)",
-              "url(#orientation-135)",
-              "url(#orientation-22.5)",
-              "url(#orientation-67.5)",
-              "url(#orientation-112.5)",
-              "url(#orientation-157.5)"
+              "url(#orientation-fat-0)",
+              "url(#orientation-fat-90)",
+              "url(#orientation-fat-45)",
+              "url(#orientation-fat-135)",
+              "url(#orientation-fat-22.5)",
+              "url(#orientation-fat-67.5)",
+              "url(#orientation-fat-112.5)",
+              "url(#orientation-fat-157.5)"
             ]
           },
           "legend": {
-            "title": "TEMPLATE"
+            "title": "%LEGEND_TITLE%"
           }
         }
       }

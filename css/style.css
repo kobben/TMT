@@ -14,7 +14,7 @@
 }
 
 body {
-  background-color: #eee;
+  background-color: #f2f2f2;
   font-family: 'TrebuchetMS', Verdana, sans-serif;
   color: black;
   font-size: 0.9em;
@@ -28,7 +28,7 @@ b {
 h1, h2, h3 {
   text-align: center;
   font-family: 'TrebuchetMS', Verdana, sans-serif;
-  color: white;
+  color: #d2d2d2;
   font-size: 35px;
   margin-top: 0px;
   margin-bottom: 3px;
@@ -132,20 +132,28 @@ select, input {
   display: inline;
   font-family: 'TrebuchetMS', Verdana, sans-serif;
   font-size: 0.9em;
-  background: #c1c1c1;
+  background: #ababab;
   border-radius: 5px;
   border-color: black;
   border-width: 0.5px;
   -webkit-appearance: none;
   -moz-appearance: none;
   box-shadow: none !important;
-  -moz-autofill: color: #c1c1c1 !important;
-  -webkit-autofill: color: #c1c1c1 !important;
+  -moz-autofill: color: #ababab !important;
+  -webkit-autofill: color: #ababab !important;
 }
 
 input {
   width: 368px;
   height: 23px;
+}
+
+.dataviewer {
+  display: none;
+  background: #eee;
+  color: #666666;
+  width:120px;
+  border: none;
 }
 
 .tooltip {
