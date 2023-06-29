@@ -1,0 +1,63 @@
+{
+  
+  "width": 700,
+  "height": 580,
+  "padding": 0,
+  "config": {
+    "view": {
+      "stroke": "none"
+    },
+    "legend": {
+      "orient": "right",
+      "titlePadding": 15,
+      "titleFontSize": 15,
+      "titleFontWeight": "bold",
+      "labelOffset": 20,
+      "symbolSize": 300,
+      "symbolStrokeWidth": 0.5
+    }
+  },
+  "data": {
+    "url": "%DATA_URL%",
+    "format": {
+      "type": "json",
+      "property": "%DATA_PROPERTY%"
+    }
+  },
+  "projection": {
+    "type": "stereographic"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "geoshape",
+        "stroke": "black",
+        "strokeWidth": 0.2
+      },
+      "encoding": {
+        "color": {
+          "field": "%DATA_ATTRIBUTE%",
+          "type": "quantitative",
+          "scale": {
+            "type": "quantize",
+            "range": [
+              "url(#dots-2)",
+              "url(#dots-4)",
+              "url(#dots-6)",
+              "url(#dots-8)",
+              "url(#dots-9)"
+            ]
+          },
+          "legend": {
+            "title": "%LEGEND_TITLE%"
+          }
+        }
+      }
+    }
+  ]
+}
+
+
+
+
+

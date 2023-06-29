@@ -40,18 +40,10 @@
       HTMLstr += "<tr>\n" +
         "    <td>\n" +
         "      <img width=\"250px\" src=\"LR/" + TXT.name_base;
-      if (i < 10) {
-        HTMLstr += "0" + i;
-      } else {
         HTMLstr += i;
-      }
       HTMLstr += ".png\" ";
       HTMLstr += "onclick=\"simpleLightbox('HR/" + TXT.name_base;
-      if (i < 10) {
-        HTMLstr += "0" + i;
-      } else {
         HTMLstr += i;
-      }
       HTMLstr += ".png', 0, false);\" >" +
         "    </td>\n" +
         "    <td>\n";
@@ -77,18 +69,10 @@
     HTMLstr += "<tr align='center'>\n" +
       "<td class=\"highlight\" onclick=\"goLeft();\">&lt;&lt;</td><td>" +
       "<img width=\"100%\" src=\"HR/" + TXT.name_base;
-    if (curSlide < 10) {
-      HTMLstr += "0" + curSlide;
-    } else {
       HTMLstr += curSlide;
-    }
     HTMLstr += ".png\" ";
     HTMLstr += "onclick=\"simpleLightbox('HR/" + TXT.name_base;
-    if (curSlide < 10) {
-      HTMLstr += "0" + curSlide;
-    } else {
       HTMLstr += curSlide;
-    }
     HTMLstr += ".png', 0, false);\" >";
     HTMLstr += "</td><td class=\"highlight\" onclick=\"goRight();\">&gt;&gt;</td></tr>\n";
     theTable.innerHTML = HTMLstr;

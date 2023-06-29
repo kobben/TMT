@@ -1,7 +1,7 @@
 ## Thematic Map Tutor
 
 
-©2019 Barend Köbben - <a href="mailto:b.j.kobben@utwente.nl">b.j.kobben@utwente.nl</a> 
+©2023 Barend Köbben - <a href="mailto:b.j.kobben@utwente.nl">b.j.kobben@utwente.nl</a> 
 
 Thematic Map Tutor is an HTML5 webapplication using  Vega-Lite for cartography. It offers a web-app to learn how to create correct thematic maps using the Cartographic Grammar as taught in various courses in ITC.
 Stable version is on <https://kartoweb.itc.nl/TMT/>, latest development version on [GitHub](https://github.com/kobben/TMT))...
@@ -17,6 +17,8 @@ Included external libraries:
 
 
 #### Changelist:
+##### version 1.1 [1 June 2023]
+* TMT versie in Nederlandse taal (functionality unchanged)
 ##### version 1.0 [5 December 2019]
 * added LINE visvars: texture, form, rotation -- uses polygons of BUFFERed lines (expects a file named %DATA_URL%_buffer).
 * added POINT visvars: colour, form, texture, ~~orientation~~, value and size

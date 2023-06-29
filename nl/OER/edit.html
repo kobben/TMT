@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+* Thematic Map Tutor -- OER =
+* NLONE EDUCATIONAl RESOURCE
+*
+* Licensed under GNU General Public License GPL v3.0
+* SPDX-License-Identifier: GPL-3.0-only
+*
+* ©2019 by the author
+* @author Barend Köbben - b.j.kobben@utwente.nl
+**
+* changes/versions: see ChangeList in README.md
+-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width"/>
+  <link rel="stylesheet" type="text/css" href="./lib/style.css">
+  <link rel="stylesheet" type="text/css" href="./lib/simplelightbox.css">
+  <script src="./lib/simpleLightbox.js"></script>
+  <!--<script src="TXT/text.json"></script>-->
+  <title>CARTOGRAPHIC GRAMMAR EXPLAINED</title>
+<script>
+  function init() {
+    var theTable = document.getElementById("theTable");
+    readTextFile("./TXT/text.json", function(text){
+      TXT = JSON.parse(text);
+      // console.log(TXT);
+      HTMLstr = "";
+      for (var i=TXT.firstslide; i <=TXT.lastslide; i++) {
+        HTMLstr += "<tr>\n" +
+          "    <td>\n" +
+          "      <img width=\"250px\" src=\"LR/" + TXT.name_base;HTMLstr += i;
+        HTMLstr += ".png\" ";
+        HTMLstr += "onclick=\"simpleLightbox('HR/" + TXT.name_base;
+        HTMLstr += i;
+        HTMLstr += ".png', 0, false);\" >" +
+          "    </td>\n" +
+          "    <td>\n";
+        HTMLstr += "<textarea id='s_" + i;
+        HTMLstr += "' rows='10' cols='80' onChange='update(this)'>";
+        HTMLstr += TXT.texts[i - 1]; //array is 0-based
+        HTMLstr += "</textarea>";
+        HTMLstr += "    </td>\n" +
+          "  </tr>";
+      }
+      theTable.innerHTML = HTMLstr;
+    })
+  }
+
+  function update(theInput) {
+    var theSlide = theInput.id.split("_").pop();
+    console.log(theSlide);
+    TXT.texts[theSlide-1] = theInput.value;
+  }
+
+  function exportTXT() {
+    document.getElementById("theJSON").innerHTML = JSON.stringify(TXT, null, 2)
+    // prompt("copy the text below to the file TXT/text.json", JSON.stringify(TXT, null, 2));
+    // console.log(JSON.stringify(TXT, null, 2));
+  }
+
+  function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+      if (rawFile.readyState === 4 && rawFile.status == "200") {
+        callback(rawFile.responseText);
+      }
+    };
+    rawFile.send(null);
+  }
+
+</script>
+
+</head>
+<body onload="init()">
+
+
+<header><h1>EDITOR</h1>
+
+  <button type="button" onclick="exportTXT()">Create text.json...</button>
+</header>
+
+<article>
+  <table id="placeholder">
+    <tr>
+      <td>
+        <table id="theTable">
+        </table>
+      </td>
+      <td>
+        <table id="theCode">
+          <tr><td>Copy the text below to the file TXT/text.json</td></tr>
+          <tr><td><textarea id="theJSON" rows="200" cols="80"></textarea></td></tr>
+        </table>
+      </td>
+    </tr>
+
+
+  </table>
+
+</article>
+
+<footer>©2023 - GIP department, ITC-University of Twente (<a
+        href="mailto:b.j.kobben@utwente.nl">b.j.kobben@utwente.nl</a>)
+</footer>
+
+</body>
+</html>

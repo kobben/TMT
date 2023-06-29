@@ -1,0 +1,110 @@
+{
+  
+  "width": 700,
+  "height": 580,
+  "padding": 0,
+  "config": {
+    "view": {
+      "stroke": "none"
+    },
+    "legend": {
+      "orient": "right",
+      "titlePadding": 15,
+      "titleFontSize": 15,
+      "titleFontWeight": "bold",
+      "labelOffset": 10,
+      "symbolSize": 400,
+      "symbolStroke": "#888888",
+      "symbolStrokeWidth": 0.3
+    }
+  },
+  "data": {
+    "url": "%DATA_URL%",
+    "format": {
+      "type": "json",
+      "property": "%DATA_PROPERTY%"
+    }
+  },
+  "projection": {
+    "type": "stereographic"
+  },
+  "layer": [
+    {
+      "mark": "circle",
+      "encoding": {
+        "longitude": {
+          "field": "properties.centroid_lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "properties.centroid_lat",
+          "type": "quantitative"
+        },
+        "stroke": {"value": "#888888"},
+        "strokeWidth": {"value": 0.3},
+        "size": {"value" : 400},
+        "fill": {
+          "field": "%DATA_ATTRIBUTE%",
+          "type": "nominal",
+          "scale": {
+            "range": [
+              "url(#orientation-fat-45)",
+              "url(#circles-4)",
+              "url(#dots-6)",
+              "url(#houndstooth)",
+              "url(#crosshatch)",
+              "url(#circles-2-small)",
+              "url(#whitecarbon)",
+              "url(#vertical-stripe-2)",
+              "url(#dots-3)",
+              "url(#lightstripe)",
+              "url(#circles-1)",
+              "url(#dots-1)",
+              "url(#horizontal-stripe-2)",
+              "url(#horizontal-stripe-1)",
+              "url(#vertical-stripe-1)",
+              "url(#circles-2)",
+              "url(#diagonal-stripe-1)",
+              "url(#smalldot)",
+              "url(#verticalstripe)",
+              "url(#diagonal-stripe-2)",
+              "url(#dots-2)",
+              "url(#circles-3)",
+              "url(#diagonal-stripe-3)",
+              "url(#horizontal-stripe-3)",
+              "url(#vertical-stripe-3)",
+              "url(#circles-4)",
+              "url(#diagonal-stripe-4)",
+              "url(#dots-4)",
+              "url(#horizontal-stripe-4)",
+              "url(#vertical-stripe-4)",
+              "url(#circles-5)",
+              "url(#diagonal-stripe-5)",
+              "url(#dots-5)",
+              "url(#horizontal-stripe-5)",
+              "url(#vertical-stripe-5)",
+              "url(#circles-6)",
+              "url(#diagonal-stripe-6)",
+              "url(#horizontal-stripe-6)",
+              "url(#vertical-stripe-6)",
+              "url(#circles-7)",
+              "url(#dots-7)",
+              "url(#horizontal-stripe-7)",
+              "url(#vertical-stripe-7)",
+              "url(#dots-8)",
+              "url(#horizontal-stripe-8)",
+              "url(#vertical-stripe-8)",
+              "url(#circles-9)",
+              "url(#dots-9)",
+              "url(#horizontal-stripe-9)",
+              "url(#vertical-stripe-9)"
+            ]
+          },
+          "legend": {
+            "title": "%LEGEND_TITLE%"
+          }
+        }
+      }
+    }
+  ]
+}

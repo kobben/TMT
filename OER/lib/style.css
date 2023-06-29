@@ -1,14 +1,12 @@
 @font-face {
   font-family: 'TrebuchetMS';
   src: url("TrebuchetMS.woff") format("woff");
-  src: url("TrebuchetMS.eot"), url("TrebuchetMS.eot?#iefix") format("embedded-opentype"), url("TrebuchetMS.woff") format("woff"), url("TrebuchetMS.ttf") format("truetype"), url("TrebuchetMS.svg#TrebuchetMS") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'TrebuchetMS-Bold';
   src: url("TrebuchetMS-Bold.woff") format("woff");
-  src: url("TrebuchetMS-Bold.eot?#iefix") format("embedded-opentype"),src: url("TrebuchetMS-Bold.eot"), url("TrebuchetMS-Bold.ttf") format("truetype"), url("TrebuchetMS-Bold.svg#TrebuchetMS-Bold") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -65,7 +63,7 @@ article {
   top: 110px;
   bottom: 20px;
   overflow: auto;
-  width: 95%;
+  /*width: 95%;*/
   margin: 5px 10px;
 }
 
@@ -78,10 +76,19 @@ footer {
   text-align: left;
   padding: 5px;
 }
-
+table {
+  /*vertical-align: top;*/
+}
+#theTable {
+  width: 960px;
+}
+#theCode {
+  width: 400px;
+}
 td {
   padding-right: 15px;
   padding-bottom: 5px;
+  vertical-align: center;
 }
 
 td.highlight:hover {
